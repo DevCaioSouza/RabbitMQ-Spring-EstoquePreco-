@@ -47,6 +47,7 @@ public class RabbitMQConnection {
         //criando as exchanges
         this.amqpAdmin.declareExchange(exchange);
 
+        //criando os bindings
         this.amqpAdmin.declareBinding(stockBinding);
         this.amqpAdmin.declareBinding(priceBinding);
     }
