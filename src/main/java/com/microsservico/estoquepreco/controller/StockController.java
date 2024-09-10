@@ -21,6 +21,6 @@ public class StockController {
     @PutMapping
     private ResponseEntity changeStock(@RequestBody StockDTO stockDTO) {
         this.rabbitMQService.sendMessage(RabbitMQConstants.STOCK_QUEUE, stockDTO);
-        return new ResponseEntity(HttpStatus.OK);
+        return new ResponseEntity(HttpStatus.CREATED);
     }
 }

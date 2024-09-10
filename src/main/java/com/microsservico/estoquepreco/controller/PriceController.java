@@ -23,6 +23,6 @@ public class PriceController {
     private ResponseEntity changePrice(@RequestBody PriceDTO priceDTO) {
 
         this.rabbitMQService.sendMessage(RabbitMQConstants.PRICE_QUEUE, priceDTO);
-        return new ResponseEntity(HttpStatus.OK);
+        return new ResponseEntity(HttpStatus.CREATED);
     }
 }
